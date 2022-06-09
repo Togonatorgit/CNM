@@ -1,0 +1,173 @@
+add_namespace = bavaria
+
+country_event = { 
+	id = bavaria.1
+	title = bavaria.1.t #calls for bavarian independence
+	desc = bavaria.1.d
+	picture = GFX_report_event_worker_protests
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = bavaria.1.a	#ignore
+		ai_chance = { factor = 90 }
+        hidden_effect = {
+             country_event = { id = bavaria.2 days = 35 }
+        }
+        add_political_power = 50
+        add_stability = -0.1
+	}
+	
+	option = {
+		name = bavaria.1.b	#suppress
+		ai_chance = { factor = 10 }
+        add_stability = 0.1
+        add_political_power = -10
+	}
+}
+
+country_event = { 
+	id = bavaria.2
+	title = bavaria.2.t #bavaria secedes
+	desc = bavaria.2.d
+	picture = GFX_report_event_worker_protests
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = bavaria.2.a	#Oh Gott!
+        BAY = {
+            transfer_state = 54
+            transfer_state = 53
+            transfer_state = 52
+            add_state_core = 54
+            add_state_core = 53
+            add_state_core = 52
+        }
+        GER = {
+            remove_state_core = 54
+            remove_state_core = 53
+            remove_state_core = 52
+        } 
+        hidden_effect = {
+            country_event = { id = bavaria.3 days = 40}
+        }   
+	}
+
+	option = {
+		name = bavaria.2.a	#For Bavaria
+        BAY = {
+            transfer_state = 54
+            transfer_state = 53
+            transfer_state = 52
+            add_state_core = 54
+            add_state_core = 53
+            add_state_core = 52
+        }
+        GER = {
+            remove_state_core = 54
+            remove_state_core = 53
+            remove_state_core = 52
+        }
+        custom_effect_tooltip = changeNationToBAY
+        hidden_effect = {
+            BAY = { 
+                change_tag_from = GER
+            }
+            country_event = { id = bavaria.3 days = 40}
+        }   
+	}
+}
+
+country_event = { 
+	id = bavaria.3
+	title = bavaria.3.t #the west rebels
+	desc = bavaria.3.d
+	picture = GFX_report_event_worker_protests
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = bavaria.3.a	#Oh Gott!
+        WUR = {
+            transfer_state = 50
+            add_state_core = 50
+        }
+        RLP = {
+            transfer_state = 42
+            transfer_state = 51
+            add_state_core = 42
+            add_state_core = 51
+        }
+        HES = {
+            transfer_state = 55
+            add_state_core = 55
+        }
+        hidden_effect = {
+            country_event = { id = bavaria.4 days = 40}
+        }   
+	}
+}
+
+country_event = { 
+	id = bavaria.4
+	title = bavaria.4.t #Northern Collapse
+	desc = bavaria.4.d
+	picture = GFX_report_event_worker_protests
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = bavaria.4.a	#Oh Gott!
+        HAN = {
+            transfer_state = 56
+            transfer_state = 57
+            transfer_state = 59
+            add_state_core = 56
+            add_state_core = 57
+            add_state_core = 59
+        }
+        SHL = {
+            transfer_state = 58
+            add_state_core = 58
+        }
+        MEK = {
+            transfer_state = 61
+            transfer_state = 62
+            add_state_core = 61
+            add_state_core = 62
+        }
+        hidden_effect = {
+            country_event = { id = bavaria.5 days = 40}
+        }   
+	}
+}
+
+country_event = { 
+	id = bavaria.5
+	title = bavaria.5.t #South Eastern Situation
+	desc = bavaria.5.d
+	picture = GFX_report_event_worker_protests
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = bavaria.5.a	#Oh Gott!
+        SIL = {
+            transfer_state = 66
+            transfer_state = 67
+        }
+        POL = {
+            puppet = SIL
+        }
+        SAX = {
+            transfer_state = 65
+            add_state_core = 65
+        }
+        THU = {
+            transfer_state = 60
+            add_state_core = 60
+        }
+        set_cosmetic_tag = GERPRE
+	}
+}
