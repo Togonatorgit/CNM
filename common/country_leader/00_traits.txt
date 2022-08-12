@@ -17,6 +17,12 @@ leader_traits = {
 		}
 	}
 
+	malding = {
+		random = 0
+		political_power_factor = -0.25
+		weekly_stability = 0.001
+	}
+
 	dictator = {
 		random = no
 		political_power_factor = 0.25
